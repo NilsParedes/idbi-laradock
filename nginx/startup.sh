@@ -1,10 +1,9 @@
 #!/bin/bash
 
 if [ ! -f /etc/nginx/ssl/default.crt ]; then
-    openssl genrsa -out "/etc/nginx/ssl/default.key" 2048
-    openssl req -new -key "/etc/nginx/ssl/default.key" -out "/etc/nginx/ssl/default.csr" -subj "/CN=default/O=default/C=UK"
-    openssl x509 -req -days 365 -in "/etc/nginx/ssl/default.csr" -signkey "/etc/nginx/ssl/default.key" -out "/etc/nginx/ssl/default.crt"
-    chmod 644 /etc/nginx/ssl/default.key
+    openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes \
+      -keyout "/etc/nginx/ssl/default.key" -out "/etc/nginx/ssl/default.crt" -subj "/CN=local.idbi.pe" \
+      -addext "subjectAltName=DNS:backend.test,DNS:delivery.test"
 fi
 
 # Start crond in background
