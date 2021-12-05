@@ -58,6 +58,29 @@ volumes:
 
 services:
 
+    # id-pos:
+    #   build:
+    #     context: ./frontend/id-pos
+    #   ports:
+    #     - "3000:3000"
+    #   volumes:
+    #     - /Users/nilsparedes/Proyectos/IDBI/id-pos:/app
+    #   networks:
+    #     - frontend
+    #     - backend
+
+    # id-client:
+    #   build:
+    #     context: ./frontend/id-client
+    #   ports:
+    #     - "4000:4000"
+    #   volumes:
+    #     - /Users/nilsparedes/Proyectos/IDBI/id-client:/app
+    #   networks:
+    #     - frontend
+    #     - backend
+
+
 ### Workspace Utilities ##################################
     workspace:
       build:
