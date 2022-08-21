@@ -9,9 +9,9 @@
 /logstash/pipeline/*.conf
 /logstash/config/pipelines.yml
 
-/nginx/ssl/*.crt
-/nginx/ssl/*.key
-/nginx/ssl/*.csr
+#/nginx/ssl/*.crt
+#/nginx/ssl/*.key
+#/nginx/ssl/*.csr
 
 /apache2/ssl/*.crt
 /apache2/ssl/*.key
